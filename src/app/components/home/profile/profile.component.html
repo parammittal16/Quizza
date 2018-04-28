@@ -1,0 +1,21 @@
+<div class="container">
+  <div style="margin-top:10%;text-align:center;">
+    <div class="avatar mx-auto"><img style="width:150px;" src="{{profile?.profile_pic}}" alt="Your Image" class="img-fluid">
+    </div>
+  </div>
+  <div style="color:#ffffff;margin-top:2%;text-align:center;font-size:2rem;">
+    Hello !! {{profile?.name}}
+  </div>
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-6" *ngFor="let key of profileCate">
+      <div class="card indigo text-center z-depth-2">
+        <div class="card-body">
+          <p class="white-text mb-0">{{key + ' : ' + profile?.category[key]}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <mdb-progressbar value="75" min="0" max="100" type="warning" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></mdb-progressbar>
+</div>

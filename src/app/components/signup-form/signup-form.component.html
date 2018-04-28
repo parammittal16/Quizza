@@ -1,0 +1,57 @@
+<div>
+    <center>
+  <button type="button" class="btn btn-primary waves-light" (click)="form.show()" mdbRippleRadius>Register</button>
+  </center>
+  <!--Modal: Register Form-->
+    <div mdbModal #form="mdb-modal" class="modal fade" id="modalRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog cascading-modal" role="document">
+            <!--Content-->
+            <div class="modal-content">
+
+                <!--Header-->
+                <div class="modal-header light-blue darken-3 white-text">
+                    <h4 class="title"><i class="fa fa-user-plus"></i> Register</h4>
+                    <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="form.hide()">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <!--Body-->
+                <div class="modal-body">
+                    <form (ngSubmit)="onSignup(f)" #f="ngForm">
+                        <div class="md-form form-sm">
+                            <i class="fa fa-user prefix grey-text"></i>
+                            <input type="text" id="username" name="username" class="form-control" ngModel mdbActive>
+                            <label for="orangeForm-name">Your name</label>
+                        </div>
+                        <div class="md-form form-sm">
+                            <i class="fa fa-envelope prefix grey-text"></i>
+                            <input type="text" id="email" name="email" class="form-control" ngModel mdbActive>
+                            <label for="orangeForm-email">Your email</label>
+                        </div>
+
+                        <div class="md-form form-sm">
+                            <i class="fa fa-lock prefix grey-text"></i>
+                            <input type="password" id="password" name="password" class="form-control" ngModel mdbActive>
+                            <label for="orangeForm-pass">Your password</label>
+                        </div>
+
+                        <div class="text-center mt-2">
+                            <button class="btn btn-info waves-light" mdbRippleRadius type="submit">Sign up</button>
+                        </div>
+
+                    </form>
+                </div>
+                <!--Footer-->
+                <div class="modal-footer">
+                    <div class="options text-center text-md-right mt-1">
+                        <p>Already have an account? <a href="#">Log In</a></p>
+                    </div>
+                    <button type="button" class="btn btn-outline-info ml-auto" data-dismiss="modal" (click)="form.hide()" mdbRippleRadius>Close</button>
+                </div>
+            </div>
+            <!--/.Content-->
+        </div>
+    </div>
+    <!--Modal: Register Form-->
+  </div>
+  

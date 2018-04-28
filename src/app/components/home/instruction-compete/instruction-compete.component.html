@@ -1,0 +1,76 @@
+<div *ngIf="insShow" class="container">
+  <div class="row">
+    <h1 style="margin-top:10px;color:#ffffff; font-size:5rem;">Instructions</h1>
+  </div>
+  <div class="row" style="color:#ffffff; font-size:2rem;">
+    <ul>
+      <li>
+        This Quiz will be having {{timeandcount?.count}} questions.
+      </li>
+      <li>
+        Each Question have to be solved in {{timeandcount?.time_per_question}} seconds.
+      </li>
+    </ul>
+  </div>
+  <div class="row" style="color:#ffffff; font-size:2rem;" *ngFor="let ins of timeandcount?.instruction">
+    <ul><li>{{ins}}.</li></ul>
+  </div>
+  <center>
+    <a class="btn btn-primary waves-light" (click)="sendToken()" mdbRippleRadius>JOIN</a>
+  </center>
+</div>
+<div *ngIf="!insShow">
+  <div *ngIf="imageShow" style="text-align:center" class="container">
+    <img src="../../../../assets/gathering_players.gif" alt="Gathering Players">
+    <h1 style="color:white;">{{text1}}</h1>
+    <h2 style="color:white;">{{text2}}</h2>
+  </div>
+  <div *ngIf="!imageShow" class="container">
+    <div *ngIf="resultShow" class="container">
+
+<table class="table table-striped">
+    <thead style="color:white;">
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let key of finalResult; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{key}}</td>
+        <td>{{question.resArray['0'][key]}}</td>
+      </tr>
+    </tbody>
+  </table>
+      <div>{{finalResult | json}}</div>
+    </div>
+    <div *ngIf="!resultShow" class="container">
+    <div class="row">
+      <div class="col align-self-start" style="font-size:1.5rem;color:#ffffff;margin-top:30px;">Question {{currentQuestion}}</div>
+      <div class="col align-self-end" style="text-align:right;font-size:1.5rem;color:#ffffff;margin-top:30px;"><span #counter></span>s</div>
+    </div>
+    <div style="margin-top:20px;" class="row">
+      <h3 class="btn btn-outline-white waves-light" style="color:#ffffff">{{question?.question}}</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-12 col-sm-12">
+        <button  class="btn btn-outline-white waves-light" mdbRippleRadius (click)="selectedAnswer(question?.option1, 'A');">A. {{question?.option1}}</button>
+      </div>
+      <div class="col-md-6 col-12 col-sm-12">
+        <button  class="btn btn-outline-white waves-light" mdbRippleRadius (click)="selectedAnswer(question?.option2, 'B');">B. {{question?.option2}}</button>
+      </div>
+      <div class="col-md-6 col-12 col-sm-12">
+        <button  class="btn btn-outline-white waves-light" mdbRippleRadius (click)="selectedAnswer(question?.option3, 'C');">C. {{question?.option3}}</button>
+      </div>
+      <div class="col-md-6 col-12 col-sm-12">
+        <button  class="btn btn-outline-white waves-light" mdbRippleRadius (click)="selectedAnswer(question?.option4, 'D');">D. {{question?.option4}}</button>
+      </div>
+    </div>
+    <div style="margin-top:20px;margin-right:20px;text-align:right;" class="row">
+      <h3 style="color:#ffffff">Selected Choice: {{opt}}. {{ans}}</h3>
+    </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
+
+    <!-- Navbar brand -->
+    <logo><a class="navbar-brand" routerLinkActive="active" routerLink="/home">Quizza</a></logo>
+
+    <!-- Collapsible content -->
+    <links>
+
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link waves-light"  routerLink="/home/category" mdbRippleRadius>Categories</a>
+            </li>
+            <!-- Dropdown -->
+
+
+        </ul>
+        <!-- Links -->
+        <!-- Search form -->
+        <form class="form-inline  waves-light" mdbRippleRadius>
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        </form>
+        <div class="nav-item dropdown" dropdown>
+            <a dropdownToggle mdbRippleRadius class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
+                <i class="fa fa-user" aria-hidden="true" style="color:#ffffff"></i>
+                <i class="fa fa-caret-down" style="color:#ffffff"></i>
+
+
+                </a>
+            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                <a  class="dropdown-item waves-light" mdbRippleRadius routerLink="/home/editprofile">Edit profile</a>
+                <div class="divider dropdown-divider"></div>
+                <a class="dropdown-item waves-light" mdbRippleRadius  routerLink="/welcome" (click)="clearToken()"><i class="fa fa-sign-out"></i>
+                  Logout</a>
+            </div>
+        </div>
+
+    </links>
+    <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->

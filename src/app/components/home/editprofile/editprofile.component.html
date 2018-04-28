@@ -1,0 +1,50 @@
+<div class="container">
+  <div style="margin-top:5%;text-align:center;">
+    <div class="avatar mx-auto"><img style="width:150px;" [src]="imgUrl" alt="Your Image" class="img-fluid">
+    </div>
+  </div>
+  <form (ngSubmit)="onSent(f)" #f="ngForm">
+    <div class="form-group">
+      <label for="exampleFormControlFile1"><h2>Name:</h2></label>
+      <input type="text" id="namedata" name="namedata" required [(ngModel)]="name">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlFile1"><h2>City:</h2></label>
+      <input type="text" id="citydata" name="citydata" required [(ngModel)]="city">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlFile1"><h2>Picture:</h2></label>
+      <input type="file" (change)="fileEvent($event)" id="filedata" name="filedata" required class="form-control-file"  ngModel>
+    </div>
+    <p class="warning">{{fileExtensionMessage}}</p>
+    <br />
+    <input type="submit" [disabled]='fileExtensionError' class="btn btn-primary" value="SEND">
+  </form>
+
+<h1>CHANGE PASSWORD</h1>
+<form (ngSubmit)="onChangePass(f2)" #f2="ngForm">
+    <div class="form-group">
+        <label for="exampleFormControlFile1"><h2>Old Password:</h2></label>
+        <input type="password" id="oldpassdata" name="oldpassdata" required [(ngModel)]="oldpassword">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlFile1"><h2>New Password:</h2></label>
+        <input type="password" id="newpassdata" name="newpassdata" required [(ngModel)]="newpassword">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlFile1"><h2>Confirm Password:</h2></label>
+        <input type="password" id="cnfrmpassdata" name="cnfrmpassdata" required [(ngModel)]="cnfrmpassword">
+    </div>
+  <input type="submit" class="btn btn-primary" value="CHANGE">
+</form>
+
+<h1>DELETE ACCOUNT</h1>
+  <form (ngSubmit)="onDel(f3)" #f3="ngForm">
+      <div class="form-group">
+          <label for="exampleFormControlFile1"><h2>Password:</h2></label>
+          <input type="password" id="delpassdata" name="delpassdata" required [(ngModel)]="delpassword">
+      </div>
+    <input type="submit" class="btn btn-danger" value="DELETE YOUR ACCOUNT">
+  </form>
+
+</div>

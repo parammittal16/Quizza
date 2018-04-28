@@ -1,0 +1,28 @@
+<div style="margin-top:3%;font-size:2.5rem;color:white;text-align:center">
+    Categories
+  </div>
+  <div class="container">
+    <div class="row">
+  <div style="margin-bottom:5%;" class="col-sm-4" *ngFor="let item of categories;">
+        <div class="card">
+          <div class="view hm-white-slight waves-light" mdbRippleRadius>
+              <img src="{{item.cat_img}}" class="img-fluid" alt="Card image">
+              <a>
+                  <div class="mask"></div>
+              </a>
+          </div>
+          <!--Card content-->
+          <div class="card-body">
+              <!--Title-->
+
+              <!--Text-->
+              <div style="text-align:center;">
+                  <h4 class="card-title">{{item.category}}</h4>
+                  <a [routerLink]="[item.category, 'practice']" class="btn btn-primary waves-light" mdbRippleRadius>Practice</a>
+                  <a [routerLink]="[item.category,'compete']"  class="btn btn-primary waves-light" mdbRippleRadius>Compete</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+      <h1 style="margin-top:10px;color:#ffffff; font-size:5rem;">Instructions</h1>
+      </div>
+      <div class="row" style="color:#ffffff; font-size:2rem;">
+        <ul>
+          <li>
+            This Quiz will be having {{timeandcount?.count}} questions.
+          </li>
+          <li>
+            Each Question have to be solved in {{timeandcount?.time_per_ques}} seconds.
+          </li>
+       </ul>
+      </div>
+      <div class="row" style="color:#ffffff; font-size:2rem;" *ngFor="let ins of timeandcount?.instruction">
+      <ul><li>{{ins}}.</li></ul>
+    </div>
+    <center>
+    <a [routerLink]="['start']" class="btn btn-primary waves-light" mdbRippleRadius>START</a>
+    </center>
+</div>
